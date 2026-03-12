@@ -15,6 +15,7 @@ fetch("/api/seattle")
 .then(data => {
 
 result.innerHTML = `
+<div style="background:white;color:black;padding:20px;margin-top:20px;border-radius:10px">
 <h2>${data.nama_kota}</h2>
 <p>Negara: ${data.negara}</p>
 <p>Negara Bagian: ${data.negara_bagian}</p>
@@ -25,6 +26,7 @@ result.innerHTML = `
 <p>Iklim: ${data.iklim}</p>
 <p>Tempat Wisata: ${data.tempat_wisata}</p>
 <p>Universitas: ${data.universitas}</p>
+</div>
 `
 
 })
