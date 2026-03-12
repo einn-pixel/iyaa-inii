@@ -15,50 +15,50 @@
 
 <body>
 
-    <div class="navbar">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-    <div>
+<div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+</div>
 
 <div class="container">
+    <h1 class="logo">EinSeek</h1>
 
-<h1 class="logo">EinSeek</h1>
 
-<form action="https://www.google.com/search" method="GET">
-
+<form id="searchForm">
+ 
 <div class="search-box">
-
 <span class="material-icons icon">search</span>
 
 
-<input 
+<input
 type="text" 
-name="q" 
+id="searchInput"
 placeholder="Penelusuran..."
 required>
 
 </div>
 
 <button type="submit" class="btn">Cari</button>
+
 </form>
 
+<div id="result"></div>
+
 <footer>
-  <div class="footer-tagline">
-    "Temukan informasi dengan cepat dan mudah (>.<)"
-  </div>
- 
+    <div class="footer-tagline">"Temukan informasi dengan cepat dan mudah (>.<)"</div>
 </footer>
 
 <div class="language">
-    <div>
-        Tersedia dalam bahasa:
-        <a href="#english">English</a>
-        <a href="#indonesia">Indonesia</a>
-    </div>   
-</div>
+    Tersedia dalam bahasa:
+    <a href="#english">English</a>
+    <a href="#indonesia">Indonesia</a>
+</div>   
 
 </div>
+
+<script src="script.js"></script>
 
 </body>
+
 </html>
