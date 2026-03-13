@@ -59,6 +59,66 @@ required>
 
 <script src="script.js"></script>
 
+<script>
+    // Ambil elemen dari HTML
+    const searchForm = document.getElementById('searchForm');
+    const searchInput = document.getElementById('searchInput');
+    const resultDiv = document.getElementById('result');
+
+    // Event ketika form di-submit
+    searchForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const keyword = searchInput.value.trim();
+        
+        if (!keyword) {
+            alert('Masukkan kata kunci pencarian');
+            return;
+        }
+
+        // Tampilkan loading
+        resultDiv.innerHTML = '<p class="loading">Mencari...</p>';
+
+        try {
+            // PANGGIL BACKEND
+            const response = await fetch(`http://localhost:5000/search?q=${encodeURIComponent(keyword)}`);
+            const data = await response.json();
+            
+            if (data.success) {
+                tampilkanHasil(data);
+            } else {
+                resultDiv.innerHTML = '<p>Error: ' + data.message + '</p>';
+            }
+        } catch (error) {
+            resultDiv.innerHTML = '<p>Gagal terhubung ke backend. Pastikan backend Python sudah jalan.</p>';
+            console.error('Error:', error);
+        }
+    });
+
+    function tampilkanHasil(data) {
+        if (data.total_results === 0) {
+            resultDiv.innerHTML = '<p>Tidak ada hasil ditemukan</p>';
+            return;
+        }
+
+        let html = `<h3>Hasil pencarian: "${data.keyword}" (${data.total_results} ditemukan)</h3>`;
+        html += `<p><small>Metode: ${data.metadata.method} | Waktu: ${(data.metadata.execution_time * 1000).toFixed(2)} ms</small></p>`;
+        
+        data.results.forEach(item => {
+            html += `
+                <div class="result-card">
+                    <h4>${item.name}</h4>
+                    <p><strong>Kategori:</strong> ${item.category}</p>
+                    <p>${item.description}</p>
+                    ${item.depth !== undefined ? `<p><small>Depth: ${item.depth}</small></p>` : ''}
+                </div>
+            `;
+        });
+        
+        resultDiv.innerHTML = html;
+    }
+</script>
+
 </body>
 
 </html>
