@@ -81,7 +81,7 @@ required>
 
         try {
             // PANGGIL BACKEND
-            const response = await fetch(`http://localhost:5000/search?q=${encodeURIComponent(keyword)}`);
+            const response = await fetch(`https://seattle-search-backend.vercel.app/search?q=${encodeURIComponent(keyword)}`);
             const data = await response.json();
             
             if (data.success) {
