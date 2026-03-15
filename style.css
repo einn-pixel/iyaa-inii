@@ -8,9 +8,12 @@ background: #a9d2ff;
 
 .navbar{
 position:fixed;
-top:20px;
+top:0;
+left:0;
 width:100%;
 text-align:center;
+padding:15px 0;
+z-index:1000;
 }
 
 .navbar a{
