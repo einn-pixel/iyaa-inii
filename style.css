@@ -1,19 +1,14 @@
 body{
 margin:0;
 padding: 0;
-display: flex;
 font-family: 'Poppins', sans-serif;
 background: #a9d2ff;
   color:white;
-
-height:100vh;
-justify-content:center;
-align-items:center;
 }
 
 .navbar{
 position:absolute;
-top:10px;
+top:20px;
 width:100%;
 text-align:center;
 }
@@ -35,8 +30,8 @@ flex-direction: column;
 justify-content:center;
 align-items:center;
 padding:0 15px;
+margin-top:80px;
 min-height: calc(100vh - 120px);
-
 }
 
 .logo{
@@ -148,7 +143,12 @@ font-style: poppins;
 }
 
 
-/* Tambahkan di style.css */
+#result{
+width:100%;
+max-width:600px;
+margin-top:30px;
+}
+
 .result-card {
     border: 1px solid #ddd;
     border-radius: 8px;
