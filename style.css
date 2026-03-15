@@ -30,11 +30,12 @@ color:#4285f4;
 .container{
 display:flex;
 flex-direction: column;
-justify-content:center;
+justify-content:flex-start;
 align-items:center;
 padding:0 15px;
 margin-top:120px;
 min-height: calc(100vh - 120px);
+position: relative;
 }
 
 .logo{
@@ -47,6 +48,8 @@ min-height: calc(100vh - 120px);
     animation: gradientMove 3s ease infinite;
     margin-bottom: 40px;
     margin-top: -20px;
+    position: relative;
+    z-index: 2;  
 }
 
 @keyframes gradientMove {
@@ -72,6 +75,8 @@ border-radius:30px;
 padding:10px 15px;
 box-shadow:0 2px 5px rgba(0,0,0,0.2);
 margin:auto;
+position: relative;
+z-index: 2;
 }
 
 .search-box:hover{
@@ -146,10 +151,30 @@ font-style: poppins;
 }
 
 
-#result{
-width:100%;
-max-width:600px;
-margin-top:30px;
+#result {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 30px;
+    max-height: 400px; 
+    overflow-y: auto;
+    position: relative;
+    z-index: 1; 
+    background: transparent;
+    padding-right: 5px;
+}
+
+#result::-webkit-scrollbar {
+    width: 6px;
+}
+
+#result::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#result::-webkit-scrollbar-thumb {
+    background: #4285f4;
+    border-radius: 10px;
 }
 
 .result-card {
