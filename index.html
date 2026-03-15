@@ -7,8 +7,6 @@
 
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-
-<!-- icon search -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
@@ -24,12 +22,10 @@
 <div class="container">
     <h1 class="logo">EinSeek</h1>
 
-
 <form id="searchForm">
  
 <div class="search-box">
 <span class="material-icons icon">search</span>
-
 
 <input
 type="text" 
@@ -57,15 +53,13 @@ required>
 
 </div>
 
-<script src="script.js"></script>
-
 <script>
     // Ambil elemen dari HTML
     const searchForm = document.getElementById('searchForm');
     const searchInput = document.getElementById('searchInput');
     const resultDiv = document.getElementById('result');
 
-    // Event ketika form di-submit
+
     searchForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         
